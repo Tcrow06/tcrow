@@ -43,12 +43,9 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Trang chủ</span></a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i><span>Về tôi</span></a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Bài tập</span></a></li>
-        <!-- <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li> -->
+        <li><a href="#home" class="active not_redirect"><i class="bi bi-house navicon"></i><span>Trang chủ</span></a></li>
+        <li><a href="#about" class="not_redirect"><i class="bi bi-person navicon "></i><span>Về tôi</span></a></li>
+        <li><a href="#assignment" class ="not_redirect"><i class="bi bi-file-earmark-text navicon "></i><span>Bài tập</span></a></li>
       </ul>
     </nav>
 
@@ -214,10 +211,6 @@
           <span>Copyright</span> <strong class="px-1 sitename">Thịnh</strong> <span>All Rights Reserved</span>
         </div>
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
           Designed by <b>Thịnh</b>
         </div>
       </div>
@@ -245,7 +238,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
-    document.querySelectorAll('a').forEach(function(link) {
+    document.querySelectorAll('a:not(.not_redirect)').forEach(function(link) {
         link.setAttribute('target', '_blank');
         link.setAttribute('rel', 'noopener noreferrer');
     });

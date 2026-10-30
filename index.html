@@ -1,321 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio of Luong Quang Thinh — Java Backend Developer based in Ho Chi Minh City. Spring Boot, Microservices, AI-integrated platforms.">
-<title>Luong Quang Thinh — Java Backend Developer</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Luong Quang Thinh — Java Backend Engineer. Specialized in Spring Boot, PostgreSQL, AWS, Redis, Elasticsearch, and Microservices.">
+  <title>Luong Quang Thinh — Java Backend Engineer</title>
+  
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Modular Theme Logic -->
+  <script src="js/theme.js" defer></script>
 </head>
 <body>
 
-<!-- SVG Icon Sprite (inline, no CDN) -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
-  <symbol id="ic-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"/>
-  </symbol>
-  <symbol id="ic-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"/>
-    <line x1="10" y1="14" x2="20" y2="4"/>
-    <polyline points="15 4 20 4 20 9"/>
-  </symbol>
-  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="3" y="5" width="18" height="14" rx="2"/>
-    <polyline points="3 7 12 13 21 7"/>
-  </symbol>
-  <symbol id="ic-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="16 18 22 12 16 6"/>
-    <polyline points="8 6 2 12 8 18"/>
-  </symbol>
-  <symbol id="ic-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="2" y="7" width="20" height="14" rx="2"/>
-    <path d="M16 7v-2a2 2 0 0 0 -2 -2h-4a2 2 0 0 0 -2 2v2"/>
-    <line x1="12" y1="12" x2="12.01" y2="12"/>
-    <path d="M2 12h20"/>
-  </symbol>
-  <symbol id="ic-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4.5 16.5c-1.5 1.26 -2 5 -2 5s3.74 -.5 5 -2c.71 -.84 .7 -2.13 -.09 -2.91a2.18 2.18 0 0 0 -2.91 -.09z"/>
-    <path d="M12 15l-3 -3a22 22 0 0 1 2 -3.95a12.88 12.88 0 0 1 10 -5a12.88 12.88 0 0 1 -5 10a22.35 22.35 0 0 1 -4 2z"/>
-    <path d="M9 12h-4s.55 -3.03 2 -4c1.62 -1.08 5 0 5 0"/>
-    <path d="M12 15v5s3.03 -.55 4 -2c1.08 -1.62 0 -5 0 -5"/>
-  </symbol>
-  <symbol id="ic-school" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M22 9l-10 -7l-10 7"/>
-    <path d="M5 9v10a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1 -1v-10"/>
-  </symbol>
-  <symbol id="ic-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="4" y="2" width="16" height="20" rx="2"/>
-    <path d="M9 22v-4h6v4"/>
-    <path d="M8 6h.01"/><path d="M16 6h.01"/>
-    <path d="M12 6h.01"/><path d="M12 10h.01"/>
-    <path d="M12 14h.01"/><path d="M16 10h.01"/>
-    <path d="M16 14h.01"/><path d="M8 10h.01"/>
-    <path d="M8 14h.01"/>
-  </symbol>
-  <symbol id="ic-university" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 21h18"/>
-    <path d="M3 10l9 -7l9 7"/>
-    <path d="M9 10v11"/>
-    <path d="M15 10v11"/>
-    <path d="M3 14h18"/>
-  </symbol>
-  <symbol id="ic-certificate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="8" r="5"/>
-    <path d="M15.477 12.89l1.523 9.11l-5 -3l-5 3l1.523 -9.11"/>
-  </symbol>
-  <symbol id="ic-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/>
-    <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/>
-  </symbol>
-</svg>
-
 <main class="port" role="main">
 
-  <!-- HERO -->
-  <header class="hero">
+  <!-- ================= TOP NAV BAR ================= -->
+  <header class="top-bar">
+    <div class="brand-tag">
+      <span class="status-dot"></span>
+      <span>LUONG QUANG THINH · BACKEND PORTFOLIO</span>
+    </div>
+    <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark and light theme">
+      <img src="assets/icons/moon.svg" id="themeIcon" class="icon icon-sm" alt="Theme icon" width="14" height="14">
+      <span id="themeText">Dark Mode</span>
+    </button>
+  </header>
+
+  <!-- ================= HERO BENTO ================= -->
+  <section class="glass-card hero">
     <div class="hero-top">
-      <div class="avatar" aria-hidden="true">LT</div>
-      <div>
-        <h1 class="hero-name">Luong Quang Thinh</h1>
+      
+      <!-- AVATAR WITH TECH SATELLITE ORBIT -->
+      <div class="avatar-wrapper" title="Luong Quang Thinh — Java Backend Engineer">
+        <div class="avatar-ring"></div>
+        
+        <!-- Satellite 1: Spring Boot -->
+        <div class="orbit-badge orbit-spring" title="Core: Spring Boot 3">
+          <img src="assets/icons/spring.svg" alt="Spring Boot" width="16" height="16">
+        </div>
+        
+        <!-- Satellite 2: AWS Cloud -->
+        <div class="orbit-badge orbit-aws" title="Cloud: AWS">
+          <img src="assets/icons/aws.svg" alt="AWS" width="16" height="16">
+        </div>
+
+        <div class="avatar-container">
+          <!-- Drop your portrait photo at assets/avatar.jpg -->
+          <img class="avatar-img" src="assets/avatar.jpg" alt="Luong Quang Thinh" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="avatar-fallback" style="display:none;">LT</div>
+        </div>
+      </div>
+
+      <!-- HERO META -->
+      <div class="hero-meta">
+        <h1 class="hero-name">
+          Luong Quang Thinh
+          <span class="status-badge">
+            <span class="status-dot"></span>
+            Open to Backend Roles
+          </span>
+        </h1>
         <div class="hero-title">
-          <span class="status-dot" aria-label="Available for work"></span>
-          Java Backend Developer · Ho Chi Minh City
+          <span>Java Backend Engineer · Fullstack (React / Spring Boot) · Cloud &amp; Distributed Systems</span>
         </div>
       </div>
     </div>
+
+    <!-- PROFESSIONAL SUMMARY -->
     <p class="hero-bio">
-      Backend engineer with hands-on experience in distributed systems, scalable API design,
-      and AI-integrated platforms. Currently building production systems at Cybridge Asia, holding a
-      Software Engineering degree from HCMUTE (GPA 3.74/4). Passionate about clean architecture,
-      real-world DevOps, and bridging backend systems with intelligent features.
+      Java Backend Engineer &amp; Fullstack Developer graduated with honors from <strong>HCMUTE (GPA 3.74/4.0)</strong>, specializing in scalable backend services, high-throughput RESTful APIs, and distributed architectures using <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>PostgreSQL</strong>, and <strong>AWS</strong>. Hands-on experience designing normalized relational schemas, implementing robust business workflows, cache acceleration with <strong>Redis</strong>, and hybrid search (BM25 &amp; Vector Embeddings) via <strong>Elasticsearch</strong>. Also experienced building production-grade frontend portals with <strong>React 19</strong>, <strong>TypeScript</strong>, <strong>Vite</strong>, and <strong>Tailwind CSS 4</strong>. Proficient in containerization with <strong>Docker Compose</strong>, automated CI/CD via <strong>GitHub Actions</strong>, and modern AI-assisted engineering with <strong>GitHub Copilot</strong>, <strong>Claude</strong>, and <strong>OpenCode</strong>.
     </p>
+
+    <!-- ACTION / SOCIAL BUTTONS -->
     <nav class="hero-links" aria-label="Contact and social links">
-      <a class="link-btn" href="https://github.com/Tcrow06" target="_blank" rel="noopener noreferrer">
-        <svg class="icon icon-md" aria-hidden="true"><use href="#ic-github"/></svg>Tcrow06
-      </a>
-      <a class="link-btn" href="https://github.com/careergraph" target="_blank" rel="noopener noreferrer">
-        <svg class="icon icon-md" aria-hidden="true"><use href="#ic-github"/></svg>careergraph org
+      <a class="link-btn primary" href="https://github.com/Tcrow06" target="_blank" rel="noopener noreferrer">
+        <img src="assets/icons/github.svg" class="icon icon-sm" alt="GitHub" width="14" height="14"> GitHub / Tcrow06
       </a>
       <a class="link-btn" href="https://careergraph.io.vn" target="_blank" rel="noopener noreferrer">
-        <svg class="icon icon-md" aria-hidden="true"><use href="#ic-external"/></svg>careergraph.io.vn
+        <img src="assets/icons/external.svg" class="icon icon-sm" alt="External link" width="14" height="14"> Live Site: careergraph.io.vn
       </a>
       <a class="link-btn" href="mailto:quangthinh06112004@gmail.com">
-        <svg class="icon icon-md" aria-hidden="true"><use href="#ic-mail"/></svg>quangthinh06112004@gmail.com
+        <img src="assets/icons/mail.svg" class="icon icon-sm" alt="Email" width="14" height="14"> quangthinh06112004@gmail.com
+      </a>
+      <a class="link-btn" href="tel:0379535003">
+        <img src="assets/icons/phone.svg" class="icon icon-sm" alt="Phone" width="14" height="14"> (+84) 379 535 003
       </a>
     </nav>
-  </header>
+  </section>
 
-  <!-- STATS -->
-  <section class="stats" aria-label="Key metrics">
-    <div class="stat">
+  <!-- ================= METRICS STATS ================= -->
+  <section class="stats" aria-label="Key technical metrics">
+    <div class="glass-card stat-card">
       <div class="stat-num">528+</div>
       <div class="stat-lbl">Commits (CareerGraph)</div>
     </div>
-    <div class="stat">
-      <div class="stat-num">6</div>
-      <div class="stat-lbl">Microservices built</div>
-    </div>
-    <div class="stat">
+    <div class="glass-card stat-card">
       <div class="stat-num">3.74</div>
-      <div class="stat-lbl">GPA / 4.0</div>
+      <div class="stat-lbl">GPA / 4.0 (HCMUTE)</div>
     </div>
-    <div class="stat">
+    <div class="glass-card stat-card">
+      <div class="stat-num">4× AWS</div>
+      <div class="stat-lbl">Official Academy Badges</div>
+    </div>
+    <div class="glass-card stat-card">
       <div class="stat-num">705</div>
-      <div class="stat-lbl">TOEIC Score</div>
+      <div class="stat-lbl">TOEIC ETS Certified</div>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section class="sec" aria-labelledby="skills-head">
-    <div class="sec-head" id="skills-head">
-      <svg class="icon icon-md" aria-hidden="true"><use href="#ic-code"/></svg>
-      Technical skills
-    </div>
-    <div class="skill-grid">
-      <span class="skill-tag hot">Java</span>
-      <span class="skill-tag hot">Spring Boot 3</span>
-      <span class="skill-tag hot">Spring Security</span>
-      <span class="skill-tag hot">Spring Data JPA</span>
-      <span class="skill-tag hot">PostgreSQL</span>
-      <span class="skill-tag hot">Redis</span>
-      <span class="skill-tag hot">Elasticsearch</span>
-      <span class="skill-tag hot">Docker</span>
-      <span class="skill-tag hot">GitHub Actions CI/CD</span>
-      <span class="skill-tag hot">Spring AI</span>
-      <span class="skill-tag">Spring Cloud</span>
-      <span class="skill-tag">OAuth 2</span>
-      <span class="skill-tag">API Gateway</span>
-      <span class="skill-tag">REST API</span>
-      <span class="skill-tag">JWT</span>
-      <span class="skill-tag">Hibernate</span>
-      <span class="skill-tag">MapStruct</span>
-      <span class="skill-tag">Cloudinary</span>
-      <span class="skill-tag">MySQL</span>
-      <span class="skill-tag sec-skill">React</span>
-      <span class="skill-tag sec-skill">TailwindCSS</span>
-      <span class="skill-tag sec-skill">TypeScript</span>
-      <span class="skill-tag">C++ / C#</span>
-      <span class="skill-tag">Postman</span>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="sec" aria-labelledby="exp-head">
-    <div class="sec-head" id="exp-head">
-      <svg class="icon icon-md" aria-hidden="true"><use href="#ic-briefcase"/></svg>
-      Work experience
-    </div>
-    <div class="xp-item">
-      <div class="xp-logo" aria-hidden="true">
-        <svg class="icon icon-lg"><use href="#ic-building"/></svg>
+  <!-- ================= LIVELY TECH STACK ================= -->
+  <section class="glass-card sec" aria-labelledby="skills-head">
+    <div class="sec-head">
+      <div class="sec-title" id="skills-head">
+        <img src="assets/icons/code.svg" class="icon icon-md" alt="Code icon" width="17" height="17">
+        Technical Skills &amp; Stack
       </div>
-      <div style="flex:1; min-width:0">
-        <div class="xp-role">Java Developer</div>
-        <div class="xp-company">Cybridge Asia</div>
-        <div class="xp-date">Nov 2025 – Present · Full-time</div>
-        <ul class="xp-bullets">
-          <li>Developed and maintained backend features for appointment scheduling and booking workflows using Spring Boot and RESTful APIs.</li>
-          <li>Implemented booking validation based on staff availability, appointment duration, and configurable time slots.</li>
-          <li>Designed and maintained backend APIs to support booking-related workflows and business requirements.</li>
-          <li>Collaborated with team members to test, debug, and improve the reliability of backend services.</li>
-        </ul>
+      <span style="font-size:11px; color:var(--spring-green); font-weight:700;">Production-Proven</span>
+    </div>
+
+    <div class="tech-groups">
+      <!-- Core Backend & Security -->
+      <div>
+        <div class="tech-group-title">⚡ Core Backend, Architecture &amp; Security</div>
+        <div class="tech-grid">
+          <div class="tech-card spring">
+            <img src="assets/icons/spring.svg" class="tech-icon-img" alt="Spring Boot" width="22" height="22">
+            <span>Spring Boot 3</span>
+          </div>
+          <div class="tech-card spring">
+            <img src="assets/icons/java.svg" class="tech-icon-img" alt="Java" width="22" height="22">
+            <span>Java (OOP, MVC)</span>
+          </div>
+          <div class="tech-card spring">
+            <img src="assets/icons/spring.svg" class="tech-icon-img" alt="Spring Security" width="22" height="22">
+            <span>Spring Security</span>
+          </div>
+          <div class="tech-card spring">
+            <img src="assets/icons/java.svg" class="tech-icon-img" alt="JSP / Servlet" width="22" height="22">
+            <span>JSP / Servlet</span>
+          </div>
+          <div class="tech-card spring">
+            <span class="tech-icon-img" style="font-size:18px;">🌿</span>
+            <span>Hibernate &amp; JPA</span>
+          </div>
+          <div class="tech-card spring">
+            <span class="tech-icon-img" style="font-size:18px;">🛡️</span>
+            <span>JWT &amp; OAuth 2</span>
+          </div>
+          <div class="tech-card spring">
+            <span class="tech-icon-img" style="font-size:18px;">🔌</span>
+            <span>RESTful APIs</span>
+          </div>
+          <div class="tech-card spring">
+            <span class="tech-icon-img" style="font-size:18px;">🏛️</span>
+            <span>Three-Tier Arch</span>
+          </div>
+        </div>
       </div>
+
+      <!-- Databases, Search & Caching -->
+      <div>
+        <div class="tech-group-title">🗄️ Databases, Search &amp; Caching Engine</div>
+        <div class="tech-grid">
+          <div class="tech-card postgres">
+            <img src="assets/icons/postgresql.svg" class="tech-icon-img" alt="PostgreSQL" width="22" height="22">
+            <span>PostgreSQL</span>
+          </div>
+          <div class="tech-card mysql">
+            <img src="assets/icons/mysql.svg" class="tech-icon-img" alt="MySQL" width="22" height="22">
+            <span>MySQL</span>
+          </div>
+          <div class="tech-card redis">
+            <img src="assets/icons/redis.svg" class="tech-icon-img" alt="Redis" width="22" height="22">
+            <span>Redis Cache</span>
+          </div>
+          <div class="tech-card postgres">
+            <img src="assets/icons/elasticsearch.svg" class="tech-icon-img" alt="Elasticsearch" width="22" height="22">
+            <span>Elasticsearch (BM25)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cloud Infrastructure & DevOps -->
+      <div>
+        <div class="tech-group-title">☁️ Cloud Infrastructure, Virtualization &amp; DevOps</div>
+        <div class="tech-grid">
+          <div class="tech-card aws">
+            <img src="assets/icons/aws.svg" class="tech-icon-img" alt="AWS EC2 & S3" width="22" height="22">
+            <span>AWS EC2 &amp; S3</span>
+          </div>
+          <div class="tech-card aws">
+            <img src="assets/icons/aws.svg" class="tech-icon-img" alt="AWS VPC" width="22" height="22">
+            <span>AWS VPC &amp; Subnets</span>
+          </div>
+          <div class="tech-card docker">
+            <img src="assets/icons/docker.svg" class="tech-icon-img" alt="Docker" width="22" height="22">
+            <span>Docker &amp; Compose</span>
+          </div>
+          <div class="tech-card aws">
+            <img src="assets/icons/github-actions.svg" class="tech-icon-img" alt="GitHub Actions" width="22" height="22">
+            <span>GitHub Actions CI/CD</span>
+          </div>
+          <div class="tech-card aws">
+            <span class="tech-icon-img" style="font-size:18px;">🔒</span>
+            <span>Security Groups / ACL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI-Assisted Development & Tools -->
+      <div>
+        <div class="tech-group-title">🤖 AI-Assisted Development &amp; Tools</div>
+        <div class="tech-grid">
+          <div class="tech-card copilot">
+            <img src="assets/icons/copilot.svg" class="tech-icon-img" alt="GitHub Copilot" width="22" height="22">
+            <span>GitHub Copilot</span>
+          </div>
+          <div class="tech-card claude">
+            <img src="assets/icons/claude.svg" class="tech-icon-img" alt="Claude AI" width="22" height="22">
+            <span>Claude AI</span>
+          </div>
+          <div class="tech-card copilot">
+            <img src="assets/icons/opencode.svg" class="tech-icon-img" alt="OpenCode" width="22" height="22">
+            <span>OpenCode</span>
+          </div>
+          <div class="tech-card spring">
+            <span class="tech-icon-img" style="font-size:18px;">✨</span>
+            <span>Spring AI</span>
+          </div>
+          <div class="tech-card postgres">
+            <span class="tech-icon-img" style="font-size:18px;">🧠</span>
+            <span>Vector Embeddings</span>
+          </div>
+          <div class="tech-card">
+            <img src="assets/icons/postman.svg" class="tech-icon-img" alt="Postman" width="22" height="22">
+            <span>Postman</span>
+          </div>
+          <div class="tech-card">
+            <img src="assets/icons/github.svg" class="tech-icon-img" alt="Git & Maven" width="22" height="22">
+            <span>Maven &amp; Git</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frontend Development -->
+      <div>
+        <div class="tech-group-title">🎨 Frontend Development</div>
+        <div class="tech-grid">
+          <div class="tech-card react">
+            <img src="assets/icons/react.svg" class="tech-icon-img" alt="React 19" width="22" height="22">
+            <span>React 19</span>
+          </div>
+          <div class="tech-card typescript">
+            <img src="assets/icons/typescript.svg" class="tech-icon-img" alt="TypeScript" width="22" height="22">
+            <span>TypeScript</span>
+          </div>
+          <div class="tech-card vite">
+            <img src="assets/icons/vite.svg" class="tech-icon-img" alt="Vite" width="22" height="22">
+            <span>Vite</span>
+          </div>
+          <div class="tech-card tailwind">
+            <img src="assets/icons/tailwind.svg" class="tech-icon-img" alt="Tailwind CSS 4" width="22" height="22">
+            <span>Tailwind CSS 4</span>
+          </div>
+          <div class="tech-card react">
+            <span class="tech-icon-img" style="font-size:18px;">🔗</span>
+            <span>React Router</span>
+          </div>
+          <div class="tech-card react">
+            <span class="tech-icon-img" style="font-size:18px;">⚡</span>
+            <span>TanStack Query</span>
+          </div>
+          <div class="tech-card react">
+            <span class="tech-icon-img" style="font-size:18px;">🐻</span>
+            <span>Zustand</span>
+          </div>
+          <div class="tech-card react">
+            <span class="tech-icon-img" style="font-size:18px;">🔌</span>
+            <span>Socket.IO Client</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="sec" aria-labelledby="proj-head">
-    <div class="sec-head" id="proj-head">
-      <svg class="icon icon-md" aria-hidden="true"><use href="#ic-rocket"/></svg>
-      Projects
+  <!-- ================= FEATURED PROJECTS WITH DISTINCT ICONS ================= -->
+  <section class="glass-card sec" aria-labelledby="proj-head">
+    <div class="sec-head">
+      <div class="sec-title" id="proj-head">
+        <img src="assets/icons/rocket.svg" class="icon icon-md" alt="Rocket icon" width="17" height="17">
+        Featured Projects
+      </div>
+      <span style="font-size:11px; color:var(--text-muted); font-weight:600;">Architectures &amp; Implementations</span>
     </div>
+
     <div class="proj-grid">
+      
+      <!-- Project 1: CareerGraph (Flagship) -->
+      <article class="glass-card proj-card featured">
+        <div class="proj-header">
+          <div class="proj-title-row">
+            <div class="proj-badge-icon" style="color:var(--spring-green);">
+              <img src="assets/icons/ai-search.svg" alt="AI Neural Search" width="20" height="20">
+            </div>
+            <div>
+              <span class="live-pill">
+                <span class="status-dot"></span> Live Production
+              </span>
+            </div>
+          </div>
+          <span style="font-size:12px; color:var(--text-muted); font-weight:700;">528+ Commits · Fullstack</span>
+        </div>
+        <h3 class="proj-name">CareerGraph — AI-Powered Smart Recruitment Ecosystem</h3>
+        <p class="proj-desc">
+          Full-stack recruitment and talent acquisition platform with a closed-loop, automated workflow. Built a <strong>Java Spring Boot</strong> backend with RESTful APIs for authentication, CV management, recruitment pipelines, and AI-powered job recommendations using <strong>Elasticsearch BM25 &amp; vector embeddings</strong>. Developed two production-grade React frontends: an <strong>HR portal</strong> (React 19 + TypeScript) for enterprise recruitment operations and a <strong>Candidate portal</strong> (React 19 + JavaScript) for job seekers. Implemented real-time interview rooms with <strong>WebRTC &amp; Socket.IO</strong>, CV builder with PDF export, real-time messaging, and Kanban pipeline management. Containerized with <strong>Docker Compose</strong> and automated CI/CD via <strong>GitHub Actions</strong>.
+        </p>
 
-      <!-- Featured -->
-      <!-- Featured: use <div> so inner <a> tags are valid HTML -->
-      <div class="proj-card featured">
-        <div class="proj-badge">
-          <svg class="icon" style="width:10px;height:10px" aria-hidden="true"><use href="#ic-eye"/></svg>
-          Live production
+        <!-- Sub-portal: HR -->
+        <div class="proj-sub-section">
+          <div class="sub-section-title">🏢 CareerGraph HR — Recruitment Workspace Portal (TypeScript)</div>
+          <ul class="sub-section-list">
+            <li><strong>Scope:</strong> Unified HR portal combining recruitment dashboard, ATS (Applicant Tracking System), interview operations, real-time messaging, and company onboarding &amp; verification.</li>
+            <li><strong>Key Features:</strong> KPI dashboard with time-range analytics, job posting lifecycle management, drag-and-drop Kanban candidate pipeline (dnd-kit), interview calendar scheduling, live online interview rooms with waiting room / admit / reject / recording / feedback, real-time candidate messaging (Socket.IO), and AI-powered candidate suggestions from backend recommendation flows.</li>
+            <li><strong>Stack:</strong> React 19, TypeScript, Vite, Tailwind CSS 4, TanStack Query, React Router, Socket.IO, FullCalendar, dnd-kit, ApexCharts, Radix UI.</li>
+          </ul>
         </div>
-        <div class="proj-icon">🧭</div>
-        <div class="proj-name">CareerGraph — AI-powered Job Platform</div>
-        <div class="proj-desc">
-          Full-stack recruitment platform with intelligent job search using Elasticsearch
-          (BM25 + semantic vector embeddings), AI-assisted CV review, interview scheduling with
-          room lifecycle management, real-time messaging via WebRTC, and a complete multi-app
-          architecture (candidate, HR, admin panels). 528+ commits. Deployed on VPS via Docker
-          Compose with GitHub Actions CI/CD pipeline including health checks and automated rollout.
+
+        <!-- Sub-portal: Client -->
+        <div class="proj-sub-section">
+          <div class="sub-section-title">👤 CareerGraph Client — Candidate Discovery Portal (JavaScript)</div>
+          <ul class="sub-section-list">
+            <li><strong>Scope:</strong> Candidate-facing entry point for job discovery, profile management, CV building, employer messaging, and online interview participation.</li>
+            <li><strong>Key Features:</strong> AI-assisted job search &amp; company discovery, multi-template CV builder with PDF export (@react-pdf/renderer), real-time employer messaging (Socket.IO), real-time notifications, timed interview room entry with presence checks, and profile / applied / saved / followed companies management.</li>
+            <li><strong>Stack:</strong> React 19, JavaScript, Vite, Tailwind CSS 4, React Router, Zustand, Axios, Socket.IO, Radix UI, Google Generative AI SDK.</li>
+          </ul>
         </div>
+
         <div class="proj-tags">
-          <span class="proj-tag">Spring Boot 3.4</span>
-          <span class="proj-tag">Spring AI</span>
-          <span class="proj-tag">Elasticsearch</span>
-          <span class="proj-tag">Redis</span>
-          <span class="proj-tag">PostgreSQL</span>
-          <span class="proj-tag">React</span>
-          <span class="proj-tag">Docker</span>
-          <span class="proj-tag">GitHub Actions</span>
-          <span class="proj-tag">Gemini API</span>
+          <span class="proj-tag highlight">Java</span>
+          <span class="proj-tag highlight">Spring Boot</span>
+          <span class="proj-tag highlight">Spring Security</span>
+          <span class="proj-tag highlight">PostgreSQL</span>
+          <span class="proj-tag highlight">Redis</span>
+          <span class="proj-tag highlight">Elasticsearch</span>
+          <span class="proj-tag highlight">React 19</span>
+          <span class="proj-tag highlight">TypeScript</span>
+          <span class="proj-tag highlight">Docker</span>
+          <span class="proj-tag highlight">GitHub Actions</span>
+          <span class="proj-tag">Vite</span>
+          <span class="proj-tag">Tailwind CSS 4</span>
+          <span class="proj-tag">Socket.IO</span>
           <span class="proj-tag">WebRTC</span>
-          <span class="proj-tag">Python (AI service)</span>
+          <span class="proj-tag">Spring AI</span>
         </div>
         <div class="proj-links">
           <a class="proj-link" href="https://careergraph.io.vn" target="_blank" rel="noopener noreferrer">
-            <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-external"/></svg>Live site
+            <img src="assets/icons/external.svg" class="icon icon-sm" alt="External link" width="14" height="14"> Live Site ↗
           </a>
           <a class="proj-link" href="https://github.com/careergraph" target="_blank" rel="noopener noreferrer">
-            <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-github"/></svg>GitHub org
+            <img src="assets/icons/github.svg" class="icon icon-sm" alt="GitHub" width="14" height="14"> GitHub Organization ↗
+          </a>
+          <a class="proj-link" href="https://github.com/careergraph/careergraph-hr" target="_blank" rel="noopener noreferrer">
+            <img src="assets/icons/github.svg" class="icon icon-sm" alt="GitHub" width="14" height="14"> HR Portal Repo ↗
           </a>
         </div>
-      </div>
+      </article>
 
-      <!-- Spring Cloud -->
-      <a class="proj-card" href="https://github.com/Tcrow06/spring-cloud" target="_blank" rel="noopener noreferrer">
-        <div class="proj-icon">☁️</div>
-        <div class="proj-name">Spring Cloud Microservices</div>
-        <div class="proj-desc">
-          Multi-service backend architecture with API Gateway, Eureka service discovery, OAuth 2
-          auth service, centralized config server, notification service, statistics service, and
-          Spring Boot Admin monitoring. Containerized with Docker.
+      <!-- Project 2: Spring Cloud Distributed Microservices -->
+      <article class="glass-card proj-card">
+        <div class="proj-header">
+          <div class="proj-title-row">
+            <div class="proj-badge-icon" style="color:var(--aws-orange);">
+              <img src="assets/icons/cloud-mesh.svg" alt="Distributed Cloud" width="20" height="20">
+            </div>
+            <span style="font-size:12px; font-weight:700; color:var(--aws-orange);">Distributed Architecture</span>
+          </div>
         </div>
+        <h3 class="proj-name">Spring Cloud Distributed Microservices</h3>
+        <p class="proj-desc">
+          Multi-service backend architecture equipped with Spring Cloud API Gateway for intelligent traffic routing, Netflix Eureka for dynamic service discovery, centralized OAuth 2 authentication service, Spring Cloud Config Server, notification service, and Spring Boot Admin for real-time cluster health monitoring. Fully containerized with Docker.
+        </p>
         <div class="proj-tags">
           <span class="proj-tag">Spring Cloud</span>
-          <span class="proj-tag">OAuth 2</span>
           <span class="proj-tag">API Gateway</span>
           <span class="proj-tag">Eureka</span>
-          <span class="proj-tag">Docker</span>
+          <span class="proj-tag">OAuth 2</span>
+          <span class="proj-tag">Docker Compose</span>
         </div>
         <div class="proj-links">
-          <span class="proj-link">
-            <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-github"/></svg>GitHub
-          </span>
+          <a class="proj-link" href="https://github.com/Tcrow06/spring-cloud" target="_blank" rel="noopener noreferrer">
+            <img src="assets/icons/github.svg" class="icon icon-sm" alt="GitHub" width="14" height="14"> View Repository ↗
+          </a>
         </div>
-      </a>
+      </article>
 
-      <!-- E-commerce -->
-      <a class="proj-card" href="https://github.com/Tcrow06/WebEcommerce_2024-2025" target="_blank" rel="noopener noreferrer">
-        <div class="proj-icon">🛒</div>
-        <div class="proj-name">E-commerce Platform</div>
-        <div class="proj-desc">
-          Full-featured ecommerce platform built with Spring Boot. Includes product management,
-          order workflow, user authentication, and payment integration. 456+ commits with active
-          team collaboration across 12 pull requests.
+      <!-- Project 3: Online Fashion E-Commerce Platform (JSP / Servlet) -->
+      <article class="glass-card proj-card">
+        <div class="proj-header">
+          <div class="proj-title-row">
+            <div class="proj-badge-icon" style="color:var(--postgres-blue);">
+              <img src="assets/icons/ecommerce.svg" alt="E-Commerce Fashion" width="20" height="20">
+            </div>
+            <span style="font-size:12px; font-weight:700; color:var(--postgres-blue);">Java JSP / Servlet · Team Project</span>
+          </div>
+          <span style="font-size:11.5px; color:var(--text-muted); font-weight:600;">456+ Commits · 12 PRs</span>
         </div>
+        <h3 class="proj-name">Online Fashion Shopping System</h3>
+        <p class="proj-desc">
+          Comprehensive online fashion shopping system utilizing <strong>Java JSP/Servlet</strong> for the backend and <strong>HTML/CSS, Bootstrap</strong> for the frontend. Supports end-to-end product management, persistent shopping carts, order processing workflows, payment gateways, and customer account security.
+        </p>
+        
+        <div class="proj-sub-section">
+          <div class="sub-section-title">Key Responsibilities:</div>
+          <ul class="sub-section-list">
+            <li><strong>Project Management &amp; Business Logic:</strong> Oversee project progress, sprint deadlines, and actively develop core business logic.</li>
+            <li><strong>Backend Engineering:</strong> Login / third-party OAuth login, place order, save image, multi-attribute filter, and Redis caching.</li>
+          </ul>
+        </div>
+
         <div class="proj-tags">
-          <span class="proj-tag">Spring Boot</span>
-          <span class="proj-tag">Spring Security</span>
-          <span class="proj-tag">JPA</span>
-          <span class="proj-tag">MySQL</span>
+          <span class="proj-tag highlight">Java (JSP / Servlet)</span>
+          <span class="proj-tag highlight">Hibernate</span>
+          <span class="proj-tag highlight">JPA</span>
+          <span class="proj-tag highlight">MySQL</span>
+          <span class="proj-tag highlight">Redis</span>
+          <span class="proj-tag">Bootstrap</span>
+          <span class="proj-tag">HTML5 / CSS3</span>
         </div>
         <div class="proj-links">
-          <span class="proj-link">
-            <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-github"/></svg>GitHub
-          </span>
+          <a class="proj-link" href="https://github.com/Tcrow06/WebEcommerce_2024-2025" target="_blank" rel="noopener noreferrer">
+            <img src="assets/icons/github.svg" class="icon icon-sm" alt="GitHub" width="14" height="14"> View Repository ↗
+          </a>
         </div>
-      </a>
+      </article>
 
     </div>
   </section>
 
-  <!-- EDUCATION & CERTS -->
-  <section class="sec" aria-labelledby="edu-head">
-    <div class="sec-head" id="edu-head">
-      <svg class="icon icon-md" aria-hidden="true"><use href="#ic-school"/></svg>
-      Education &amp; certifications
+  <!-- ================= WORK EXPERIENCE ================= -->
+  <section class="glass-card sec" aria-labelledby="exp-head">
+    <div class="sec-head">
+      <div class="sec-title" id="exp-head">
+        <img src="assets/icons/briefcase.svg" class="icon icon-md" alt="Briefcase icon" width="17" height="17">
+        Work Experience
+      </div>
+      <span style="font-size:11px; color:var(--spring-green); font-weight:700;">Enterprise Production</span>
     </div>
 
+    <div class="xp-list">
+      <article class="xp-item">
+        <div class="xp-logo">
+          <img src="assets/icons/cybridge.png" alt="Cybridge Asia" width="38" height="38" style="object-fit:contain;">
+        </div>
+        <div class="xp-content">
+          <div class="xp-role">Java Developer</div>
+          <div class="xp-company">Cybridge Asia</div>
+          <div class="xp-date">June 2025 – Present · Ho Chi Minh City, Vietnam</div>
+
+          <!-- Sub-project 1 -->
+          <div class="xp-project-subhead">
+            <span>💈 WinBoard – Salon Booking Management System</span>
+          </div>
+          <ul class="xp-bullets">
+            <li>Developed and maintained backend features for appointment scheduling and booking workflows using <strong>Spring Boot</strong> and <strong>RESTful APIs</strong>.</li>
+            <li>Implemented dynamic booking validation based on real-time staff availability, service durations, and configurable time slot intervals.</li>
+            <li>Designed and maintained reliable backend APIs supporting booking workflows, business logic, and operational performance.</li>
+            <li>Collaborated closely with cross-functional team members to test, debug features, and enhance overall backend service reliability.</li>
+          </ul>
+
+          <!-- Sub-project 2 -->
+          <div class="xp-project-subhead">
+            <span>⚙️ Internal Framework Lifecycle Management System</span>
+          </div>
+          <ul class="xp-bullets">
+            <li>Developed and maintained backend services using <strong>Java, Spring Boot</strong>, and <strong>RESTful APIs</strong> for framework lifecycle tracking and automated update notifications.</li>
+            <li>Designed and maintained normalized <strong>PostgreSQL</strong> schemas to support framework version lineage, dependencies, and notification management.</li>
+            <li>Integrated backend APIs seamlessly with React frontend interfaces to deliver robust end-to-end application features.</li>
+            <li>Collaborated with team members to test, debug, and maintain continuous application stability.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION & CERTIFICATIONS ================= -->
+  <section class="glass-card sec" aria-labelledby="edu-head">
+    <div class="sec-head">
+      <div class="sec-title" id="edu-head">
+        <img src="assets/icons/school.svg" class="icon icon-md" alt="School icon" width="17" height="17">
+        Education &amp; Certifications
+      </div>
+    </div>
+
+    <!-- HCMUTE -->
     <div class="cert-row">
-      <div class="cert-icon" aria-hidden="true">
-        <svg class="icon icon-lg"><use href="#ic-university"/></svg>
+      <div class="cert-icon-box" style="background:#fff; padding:4px;">
+        <img src="assets/icons/hcmute.png" alt="HCMUTE" width="34" height="34" style="object-fit:contain;">
       </div>
       <div>
         <div class="cert-name">HCMC University of Technology and Engineering (HCMUTE)</div>
         <div class="cert-meta">
-          Bachelor of Software Engineering · 2022–2026 · GPA 3.74/4.0<br>
-          3× Academic Scholarship (HK2/2022–23, HK2/2024–25, HK2/2025–26)
+          <strong>Bachelor of Information Technology (Major: Software Engineering)</strong> · 2022 – 2026<br>
+          Cumulative GPA: <strong>3.74 / 4.0</strong> (Top Academic Standing)<br>
+          <span class="cert-badge-tag">🏆 3× Academic Merit Scholarships: Semester 2 (2022–2023), Semester 2 (2024–2025), Semester 2 (2025–2026)</span>
         </div>
       </div>
     </div>
 
+    <!-- AWS -->
     <div class="cert-row">
-      <div class="cert-icon" aria-hidden="true">
-        <svg class="icon icon-lg"><use href="#ic-certificate"/></svg>
+      <div class="cert-icon-box" style="background:var(--aws-bg);">
+        <img src="assets/icons/aws.svg" alt="AWS Certified" width="26" height="26">
       </div>
       <div>
-        <div class="cert-name">TOEIC 705 — ETS Certified</div>
-        <div class="cert-meta">Listening &amp; Reading · October 2024</div>
+        <div class="cert-name">AWS Academy Graduate — 4× Official Training Badges</div>
+        <div class="cert-meta">
+          Amazon Web Services Training and Certification<br>
+          Core proficiencies: <strong>EC2, S3, VPC, Cloud Architecture, Web Application Builder, Data Pipeline, Cloud Developing</strong>.
+        </div>
+        <div class="cert-badges-grid" style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+          <span class="cert-badge-tag">🟧 Cloud Data Pipeline Builder · Nov 2025</span>
+          <span class="cert-badge-tag">🟧 Cloud Web Application Builder · Nov 2025</span>
+          <span class="cert-badge-tag">🟧 Cloud Developing · Oct 2025</span>
+          <span class="cert-badge-tag">🟧 Cloud Foundations · Oct 2025</span>
+        </div>
+        <div class="proj-links" style="margin-top:10px;">
+          <a class="proj-link" href="https://www.credly.com/badges/a1641a50-47c3-45ca-855c-cc4ee3ab9923/linked_in?t=t3t6a5" target="_blank" rel="noopener noreferrer">
+            <img src="assets/icons/external.svg" class="icon icon-sm" alt="External" width="13" height="13"> Verify Credly Badge ↗
+          </a>
+          <a class="proj-link" href="https://www.credly.com/users/luong-quang-thinh/badges" target="_blank" rel="noopener noreferrer">
+            <img src="assets/icons/external.svg" class="icon icon-sm" alt="External" width="13" height="13"> View Credly Badge Wallet ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOEIC -->
+    <div class="cert-row">
+      <div class="cert-icon-box" style="background:var(--postgres-bg);">
+        <img src="assets/icons/cert.svg" alt="TOEIC 705" width="24" height="24">
+      </div>
+      <div>
+        <div class="cert-name">TOEIC 705 — Listening &amp; Reading (ETS Certified)</div>
+        <div class="cert-meta">
+          Issued October 2024 · Proficient technical reading, documentation analysis, and global team communication.
+        </div>
+        <div style="margin-top:10px;">
+          <a class="proj-link" href="assets/image/11787c0f-fb8b-48d9-b671-fff404192876.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="assets/icons/external.svg" class="icon icon-sm" alt="External" width="13" height="13"> View Official TOEIC Score Certificate ↗
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <footer class="cta">
-    <p class="cta-text">Open to Backend / Fullstack opportunities. Let's build something together.</p>
-    <a class="cta-email" href="mailto:quangthinh06112004@gmail.com">quangthinh06112004@gmail.com</a>
-    <p class="cta-phone">+84 379 535 003</p>
+  <!-- ================= CALL TO ACTION / FOOTER ================= -->
+  <footer class="glass-card cta">
+    <h2 class="cta-title">Let's Build Reliable, Scalable Systems Together</h2>
+    <p class="cta-sub">
+      Actively open to <strong>Java Backend Engineer</strong> and <strong>Fullstack</strong> opportunities. Reach out via email or phone for collaborative inquiries.
+    </p>
+    <div class="cta-contacts">
+      <a class="cta-btn email" href="mailto:quangthinh06112004@gmail.com">
+        <img src="assets/icons/mail.svg" class="icon icon-md" alt="Email" width="17" height="17"> quangthinh06112004@gmail.com
+      </a>
+      <a class="cta-btn phone" href="tel:0379535003">
+        <img src="assets/icons/phone.svg" class="icon icon-md" alt="Phone" width="17" height="17"> (+84) 379 535 003
+      </a>
+    </div>
+    <div style="margin-top: 1.6rem; font-size: 12px; color: var(--text-muted);">
+      Khanh Hoi Ward, Ho Chi Minh City, Vietnam · <a href="https://github.com/Tcrow06" target="_blank" rel="noopener noreferrer" style="color:var(--spring-green); text-decoration:none;">github.com/Tcrow06</a>
+    </div>
   </footer>
 
 </main>
+
 </body>
 </html>

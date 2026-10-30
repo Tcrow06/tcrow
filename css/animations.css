@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Keyframes & Dynamic Micro-Interactions
+   ========================================================================== */
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes floatOrb {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(-4px) scale(1.08); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.8); }
+}
+
+.avatar-ring {
+  animation: rotateGlow 8s linear infinite;
+}
+
+.orbit-badge {
+  animation: floatOrb 3.2s ease-in-out infinite alternate;
+}
+.orbit-spring {
+  animation-delay: 0s;
+}
+.orbit-aws {
+  animation-delay: 1.6s;
+}
+
+.status-dot {
+  animation: pulseDot 2s infinite ease-in-out;
+}
+

@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Layout, Reset & Grid Systems
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 2rem 1.25rem 4rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.port {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── TOP NAV BAR ── */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.25rem;
+}
+.brand-tag {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--spring-green);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── STATS METRICS GRID ── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+@media (max-width: 580px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── SECTION HEADER ── */
+.sec {
+  padding: 1.6rem 1.85rem;
+}
+.sec-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.25rem;
+}
+.sec-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── TECH GROUPS & GRID ── */
+.tech-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+.tech-group-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 0.75rem;
+}
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+  gap: 10px;
+}
+@media (max-width: 480px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── PROJECTS & EXPERIENCE LISTS ── */
+.proj-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+.xp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
